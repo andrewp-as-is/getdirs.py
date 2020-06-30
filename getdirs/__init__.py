@@ -1,6 +1,7 @@
-#!/usr/bin/env python
+__all__ = ['getdirs']
+
+
 import os
-import public
 
 
 def _iter_dirs(path):
@@ -9,7 +10,6 @@ def _iter_dirs(path):
             yield os.path.join(root, d)
 
 
-@public.add
 def getdirs(path):
     """return a list of all dirs in the directory and subdirectories"""
     return list(_iter_dirs(path))
